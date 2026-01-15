@@ -270,11 +270,15 @@
     }
     const fcMobile = mobile()
     if(window.innerWidth < 768){
+        // Lấy ngày và tháng từ datetxt (format: "13/01/1993")
+        let dateParts = datetxt.split('/');
+        let day = dateParts[0]; // "13"
+        let month = dateParts[1]; // "01"
         setTimeout(()=>{
-            fcMobile.timeout("26", document.querySelector(".day"))
+            fcMobile.timeout(day, document.querySelector(".day"))
         },5000)
         setTimeout(()=>{
-            fcMobile.timeout("10", document.querySelector(".month"))
+            fcMobile.timeout(month, document.querySelector(".month"))
         },6000)
     }
 
